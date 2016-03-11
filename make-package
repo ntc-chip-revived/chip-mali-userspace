@@ -1,0 +1,28 @@
+#!/bin/bash
+NAME=chip-mali-userspace
+VERSION=0.1
+
+TARGETDIR="usr/lib/arm-linux-gnueabihf/"
+mkdir "${NAME}-${VERSION}"
+cd "${NAME}-${VERSION}"
+dh_make --createorig --indep --copyright mit --yes
+find debian -type f -not -regex 'debian/\(changelog\|compat\|rules\|control\|copyright\)' -exec rm {} \;
+echo "./debian/source/* ./" > "debian/${NAME}.install"
+
+mkdir -p "debian/source/${TARGETDIR}"
+mkdir -p "debian/source/etc/X11/"
+cp ../x11conf "debian/source/etc/X11/xorg.conf"
+cp ../libMali.so "debian/source/${TARGETDIR}/libMali.so"
+cat <<- EOF > "debian/${NAME}.links"
+	${TARGETDIR}/libEGL.so.1		${TARGETDIR}/libEGL.so
+	${TARGETDIR}/libEGL.so.1.4		${TARGETDIR}/libEGL.so.1
+	${TARGETDIR}/libMali.so			${TARGETDIR}/libEGL.so.1.4
+	${TARGETDIR}/libGLESv1_CM.so.1		${TARGETDIR}/libGLESv1_CM.so
+	${TARGETDIR}/libGLESv1_CM.so.1.1	${TARGETDIR}/libGLESv1_CM.so.1
+	${TARGETDIR}/libMali.so			${TARGETDIR}/libGLESv1_CM.so.1.1
+	${TARGETDIR}/libGLESv2.so.2		${TARGETDIR}/libGLESv2.so
+	${TARGETDIR}/libGLESv2.so.2.0		${TARGETDIR}/libGLESv2.so.2
+	${TARGETDIR}/libMali.so			${TARGETDIR}/libGLESv2.so.2.0
+EOF
+
+dpkg-buildpackage -uc -tc -rfakeroot

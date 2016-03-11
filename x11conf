@@ -1,0 +1,20 @@
+Section "Files"
+        ModulePath "/usr/lib/arm-linux-gnueabihf/xorg/modules/"
+        ModulePath "/usr/lib/xorg/modules/"
+EndSection
+
+Section "Monitor"
+        Identifier              "Composite-1"
+        Option  "PreferredMode" "NTSC10"
+EndSection
+
+Section "Device"
+        Identifier      "Allwinner sun4i DRM"
+        Driver          "armsoc"
+        Option  "Monitor-Unknown-1"     "Composite-1"
+EndSection
+
+Section "Screen"
+        Identifier "Screen0"
+        Device     "Card0"
+EndSection
