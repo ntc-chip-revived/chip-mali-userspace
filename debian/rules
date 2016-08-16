@@ -21,10 +21,3 @@ include /usr/share/dpkg/default.mk
 %:
 	dh $@ 
 
-# debmake generated override targets
-# This is example for Cmake (See http://bugs.debian.org/641051 )
-override_dh_strip:
-	echo "no strip!"
-
-
-
