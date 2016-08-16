@@ -1,4 +1,4 @@
-Source: mesa
+Source: chip-mali-userspace
 Section: libs
 Priority: optional
 Maintainer: Next Thing Co. <software@nextthing.co>
