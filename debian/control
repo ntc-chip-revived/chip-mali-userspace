@@ -10,7 +10,7 @@ Github: github.com/nextthingco
 Package: chip-mali-userspace
 Architecture: armhf
 Depends: libc6 (>= 2.4), libdrm2 (>= 2.4.38), libgbm1 (>= 7.11~1), libgcc1 (>= 1:4.4.0), libstdc++6 (>= 4.6), libudev1 (>= 183), libwayland-client0 (>= 1.0.2), libwayland-server0 (>= 1.0.2), libx11-6 (>= 2:1.4.99.1), libxext6, libxfixes3
-Provides: libgles2 (10.3.2), libgles1 (10.3.2), libegl1-mesa (10.3.2), libgles2-mesa (10.3.2)
-Conflicts: libgles2, libgles1, libegl1-mesa, libgles2-mesa
+Provides: libegl1-mesa (10.3.2), libgles2-mesa (10.3.2)
+Conflicts: libegl1-mesa, libgles2-mesa
 Multi-Arch: same
 Description: CHIP Mali binary driver
