@@ -1,6 +1,6 @@
 Source: chip-mali-userspace
 Section: libs
-Priority: optional
+Priority: extra
 Maintainer: Next Thing Co. <software@nextthing.co>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
@@ -9,9 +9,8 @@ Github: github.com/nextthingco
 
 Package: chip-mali-userspace
 Architecture: armhf
-Depends: libc6 (>= 2.4), libdrm2 (>= 2.4.38), libgbm1 (>= 7.11~1), libgcc1 (>= 1:4.4.0), libstdc++6 (>= 4.6), libudev1 (>= 183), libwayland-client0 (>= 1.0.2), libwayland-server0 (>= 1.0.2), libx11-6 (>= 2:1.4.99.1), libxext6, libxfixes3
-Breaks: libgles2, libgles1, libegl1-mesa, libgles2-mesa
-Replaces: libgles2, libgles1, libegl1-mesa, libgles2-mesa
-Provides: libgles2 (10.3.2), libgles1 (10.3.2), libegl1-mesa (10.3.2), libgles2-mesa (10.3.2)
+Depends: libc6 (>= 2.13-28), libc6 (>= 2.4), libdrm2 (>= 2.3.1), libx11-6 (>= 2:1.4.99.1), libxext6, libxfixes3
+Provides: libgles1-mesa, libgles1-mesa-dev, libgles2-mesa, libgles2-mesa-dev, libegl1-mesa, libopenvg1-mesa, libopenvg1-mesa-dev, libegl1-mesa-drivers, libegl1-mesa-dev
+Replaces: libgles1-mesa, libgles1-mesa-dev, libgles2-mesa, libgles2-mesa-dev, libegl1-mesa, libopenvg1-mesa, libopenvg1-mesa-dev, libegl1-mesa-drivers, libegl1-mesa-dev
 Multi-Arch: same
 Description: CHIP Mali binary driver
