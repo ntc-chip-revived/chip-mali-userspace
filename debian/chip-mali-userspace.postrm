@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ]]; then
+if [[ remove = "$1" || abort-install = "$1" || disappear = "$1" ]]; then
 
 	if [ -L /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0 ]; then
 		rm /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
@@ -18,19 +18,19 @@ if [[ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ]]; then
 		rm /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
 	fi
 
-	dpkg-divert --package libegl1-mesa --remove --rename \
+	dpkg-divert --package chip-mali-userspace --remove --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
 
-	dpkg-divert --package libwayland-egl1-mesa --remove --rename \
+	dpkg-divert --package chip-mali-userspace --remove --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
 
-	dpkg-divert --package libgles1-mesa --remove --rename \
+	dpkg-divert --package chip-mali-userspace --remove --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0.real\
 		/usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
 
-	dpkg-divert --package libgles2-mesa --remove --rename \
+	dpkg-divert --package chip-mali-userspace --remove --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
 
