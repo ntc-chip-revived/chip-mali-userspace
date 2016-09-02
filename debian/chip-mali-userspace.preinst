@@ -4,31 +4,43 @@ if [[ "$1" != "upgrade" &&\
  ! -L /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0 ]]; then
 
 	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.real\
+		/usr/lib/arm-linux-gnueabihf/libEGL.so
+	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.1.real\
+		/usr/lib/arm-linux-gnueabihf/libEGL.so.1
+	dpkg-divert --package chip-mali-userspace --add --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
 
+	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.real\
+		/usr/lib/arm-linux-gnueabihf/libwayland-egl.so
+	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.real\
+		/usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1
 	dpkg-divert --package chip-mali-userspace --add --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
 
 	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so
+	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1
+	dpkg-divert --package chip-mali-userspace --add --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0.real\
 		/usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
 
 	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv2.so.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv2.so
+	dpkg-divert --package chip-mali-userspace --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv2.so.2
+	dpkg-divert --package chip-mali-userspace --add --rename \
 		--divert /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0.real\
 		/usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
-
-	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
-	 /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
-
-	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
-	 /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
-
-	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
-	 /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
-
-	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
-	 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
 
 fi
