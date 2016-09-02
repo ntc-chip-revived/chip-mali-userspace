@@ -1,0 +1,34 @@
+#!/bin/sh
+
+if [[ "$1" != "upgrade" &&\
+ ! -L /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0 ]]; then
+
+	dpkg-divert --package libegl1-mesa --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0.real\
+		/usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+
+	dpkg-divert --package libwayland-egl1-mesa --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0.real\
+		/usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
+
+	dpkg-divert --package libgles1-mesa --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
+
+	dpkg-divert --package libgles2-mesa --add --rename \
+		--divert /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0.real\
+		/usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+
+	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
+	 /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+
+	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
+	 /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
+
+	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
+	 /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
+
+	ln -s /usr/lib/arm-linux-gnueabihf/libMali.so\
+	 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+
+fi
