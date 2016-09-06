@@ -2,6 +2,11 @@
 
 if [[ remove = "$1" || abort-install = "$1" || disappear = "$1" ]]; then
 
+	rm /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+	rm /usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
+	rm /usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
+	rm /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+
 #	dpkg-divert --package chip-mali-userspace --remove --rename \
 #		--divert /usr/lib/arm-linux-gnueabihf/libEGL.so.real\
 #		/usr/lib/arm-linux-gnueabihf/libEGL.so
