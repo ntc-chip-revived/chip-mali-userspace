@@ -1,4 +1,4 @@
-usr/lib/arm-linux-gnueabihf/libMali.so				usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
-usr/lib/arm-linux-gnueabihf/libMali.so				usr/lib/arm-linux-gnueabihf/liblibwayland-egl.so.1.0.0
-usr/lib/arm-linux-gnueabihf/libMali.so				usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
-usr/lib/arm-linux-gnueabihf/libMali.so				usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
+usr/lib/arm-linux-gnueabihf/libMali.so	usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0
+usr/lib/arm-linux-gnueabihf/libMali.so	usr/lib/arm-linux-gnueabihf/libwayland-egl.so.1.0.0
+usr/lib/arm-linux-gnueabihf/libMali.so	usr/lib/arm-linux-gnueabihf/libGLESv1_CM.so.1.1.0
+usr/lib/arm-linux-gnueabihf/libMali.so	usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0
