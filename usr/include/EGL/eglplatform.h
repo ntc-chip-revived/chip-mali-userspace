@@ -83,43 +83,14 @@ typedef int   EGLNativeDisplayType;
 typedef void *EGLNativeWindowType;
 typedef void *EGLNativePixmapType;
 
-#elif defined(WL_EGL_PLATFORM)
+#elif defined(__arm__) && defined(__gnu_linux__)  /* ARM Linux Mali */
+#include <EGL/fbdev_window.h>
 
-typedef struct wl_display     *EGLNativeDisplayType;
-typedef struct wl_egl_pixmap  *EGLNativePixmapType;
-typedef struct wl_egl_window  *EGLNativeWindowType;
-
-#elif defined(__GBM__)
-
-typedef struct gbm_device  *EGLNativeDisplayType;
-typedef struct gbm_bo      *EGLNativePixmapType;
-typedef void               *EGLNativeWindowType;
-
-#elif defined(ANDROID) /* Android */
-
-struct ANativeWindow;
-struct egl_native_pixmap_t;
-
-typedef struct ANativeWindow        *EGLNativeWindowType;
-typedef struct egl_native_pixmap_t  *EGLNativePixmapType;
-typedef void                        *EGLNativeDisplayType;
-
-#elif defined(MIR_EGL_PLATFORM)
-
-#include <mir_toolkit/mir_client_library.h>
-typedef MirEGLNativeDisplayType EGLNativeDisplayType;
-typedef void                   *EGLNativePixmapType;
-typedef MirEGLNativeWindowType  EGLNativeWindowType;
+typedef void*         EGLNativeDisplayType;
+typedef void*         EGLNativePixmapType;
+typedef fbdev_window* EGLNativeWindowType;
 
 #elif defined(__unix__)
-
-#ifdef MESA_EGL_NO_X11_HEADERS
-
-typedef void            *EGLNativeDisplayType;
-typedef khronos_uintptr_t EGLNativePixmapType;
-typedef khronos_uintptr_t EGLNativeWindowType;
-
-#else
 
 /* X11 (tentative)  */
 #include <X11/Xlib.h>
@@ -128,8 +99,6 @@ typedef khronos_uintptr_t EGLNativeWindowType;
 typedef Display *EGLNativeDisplayType;
 typedef Pixmap   EGLNativePixmapType;
 typedef Window   EGLNativeWindowType;
-
-#endif /* MESA_EGL_NO_X11_HEADERS */
 
 #else
 #error "Platform not recognized"
