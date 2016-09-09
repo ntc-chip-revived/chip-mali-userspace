@@ -6,7 +6,7 @@ includedir=${prefix}/include
 Name: glesv1_cm
 Description: Mali GLES v1
 Requires.private:
-Version: r4p0
+Version: r6p0
 Libs: -L${libdir} -lGLESv1_CM
 Libs.private: -lm -lpthread -ldl
 Cflags: -I${includedir}
