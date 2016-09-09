@@ -9,8 +9,8 @@ Github: github.com/nextthingco
 
 Package: chip-mali-userspace
 Architecture: armhf
-Provides: mali-x11,libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev,libgles2,libgles1,libegl1-x11,libegl1
-Conflicts: mali-fvdev,libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev
-Replaces: mali-fbdev,libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev
+Provides:  libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev,libgles2,libgles1,libegl1-x11,libegl1, libwayland-egl1, libwayland-egl1-mesa, libwayland-egl1-mesa-dbg
+Conflicts: libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev,libgles2,libgles1,libegl1-x11,libegl1, libwayland-egl1, libwayland-egl1-mesa, libwayland-egl1-mesa-dbg
+Replaces:  libegl1-mesa,libegl1-mesa-dbg,libegl1-mesa-dev,libegl1-mesa-drivers,libegl1-mesa-drivers-dbg,libgles1-mesa,libgles1-mesa-dbg,libgles1-mesa-dev,libgles2-mesa,libgles2-mesa-dbg,libgles2-mesa-dev,libgles2,libgles1,libegl1-x11,libegl1, libwayland-egl1, libwayland-egl1-mesa, libwayland-egl1-mesa-dbg
 Multi-Arch: same
 Description: CHIP Mali binary driver
