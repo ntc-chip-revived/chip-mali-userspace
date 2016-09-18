@@ -83,13 +83,6 @@ typedef int   EGLNativeDisplayType;
 typedef void *EGLNativeWindowType;
 typedef void *EGLNativePixmapType;
 
-#elif defined(__arm__) && defined(__gnu_linux__)  /* ARM Linux Mali */
-#include <EGL/fbdev_window.h>
-
-typedef void*         EGLNativeDisplayType;
-typedef void*         EGLNativePixmapType;
-typedef fbdev_window* EGLNativeWindowType;
-
 #elif defined(__unix__)
 
 /* X11 (tentative)  */
